@@ -1,0 +1,33 @@
+# https://github.com/thomaskeig/cr-exp-plotter
+# Edit your settings here and then run "main.py" to start!
+
+#               # ~~~ BASIC SETTINGS ~~~ #
+# Read and edit these settings before running the program
+
+# API Key from https://developer.clashroyale.com
+api-key: WATCH-FIRST-2-MINUTES-OF-HTTPS://YOUTU.BE/3RAtqgVQ1rU-AND-REPLACE-THIS-TEXT-WITH-YOUR-KEY
+
+# The title of the graph on the image
+graph-title: Player Experience
+
+# The time to send the graph to the Discord channel.
+# It will be sent once every day at this time. (24 hour format)
+time: 00:00
+
+# The link to the Discord webhook
+# How to make a Discord Webhook --> https://youtu.be/fKksxz2Gdnc
+webhook-url: https://discord.com/api/webhooks/XXXXXXXXXXXXXXXXXX/XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+
+#           # ~~~ ADVANCED SETTINGS ~~~ #
+# Only change these settings if you know what you're doing
+
+# How many seconds between checking if it is the time to create the graph
+# Low number = More RAM usage, more accurate timed post.
+# High Number = Less RAM usage, less accurate timed post.
+# Recommended = 30
+check-time: 3
+
+# Plot markers style to be written on the graph.
+# Full list: https://matplotlib.org/stable/api/markers_api.html
+marker: x

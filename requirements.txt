@@ -1,0 +1,5 @@
+matplotlib
+pyyaml
+requests
+schedule
+discord_webhook

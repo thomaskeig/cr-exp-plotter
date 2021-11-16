@@ -1,0 +1,20 @@
+{
+  "account_list": [
+    {
+      "tag": "2JU9RJPUV",
+      "display_name": "Player 1",
+      "data": {
+        "xp": [],
+        "dates": []
+      }
+    },
+    {
+      "tag": "LLP0PULUV",
+      "display_name": "Player 2",
+      "data": {
+        "xp": [],
+        "dates": []
+      }
+    }
+  ]
+}
