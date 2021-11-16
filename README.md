@@ -4,7 +4,7 @@ Plot all of your friends Clash Royale experience in a graph that evolves over ti
 ## How does it work?
 This bot will create a graph showing all your friend's current XP in Clash Royale. Every day it will send a new updated graph to a Discord channel using a webhook.
 
-## Screenshots
+## Screenshot
 ![image](https://user-images.githubusercontent.com/60482551/142044106-a48845d0-0245-434a-9dca-19cabaa5559c.png)
 
 ## How do I set this up?
