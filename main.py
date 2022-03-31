@@ -30,6 +30,8 @@ except Exception as e:
 
 def run():
     try:
+        print('[+] Saving new users data')
+
         with open('./cache/data.json', 'r') as f:
             data = json.load(f)
 
@@ -39,9 +41,10 @@ def run():
             playerData = r.json()
 
             if r.status_code != 200:
-                print(playerData)
+                print(f'   [X] Received status code {r.status_code} when getting data for {i["tag"]}')
 
             else:
+                print(f'   [/] Saving data for {playerData["name"]}')
                 expPoints = playerData["expPoints"]
                 expLevel = playerData["expLevel"]
 
@@ -56,10 +59,13 @@ def run():
                 with open('./cache/data.json', 'w+') as f:
                     json.dump(data, f, indent=2)
 
+                print(f'   [+] Successfully saved data for {playerData["name"]}')
+
     except Exception as e:
-        print(e)
+        print(f'   [X] An unknown error occurred: {e}')
 
     try:
+        print(f'[/] Generating graph...')
         with open('./cache/data.json', 'r') as f:
             data = json.load(f)
 
@@ -77,13 +83,22 @@ def run():
         plt.legend()
         plt.savefig('./plot.png')
 
+        print(f'   [/] Successfully generated graph, now posting to Discord...')
+
         webhook = DiscordWebhook(url=webhook_url)
         with open("./plot.png", "rb") as f:
             webhook.add_file(file=f.read(), filename='unknown.png')
         webhook.execute()
 
+        print(f'   [+] Successfully posted graph on discord')
+
     except Exception as e:
-        print(e)
+        print(f'   [X] An unknown error occurred: {e}')
+
+    print(f'\n\nWaiting for next run...')
+
+
+print(f'\nWaiting for next run...')
 
 schedule.every().day.at(time).do(run)
 while True:
