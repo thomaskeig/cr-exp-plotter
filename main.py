@@ -4,7 +4,7 @@ import yaml
 import json
 import requests
 import schedule
-import time
+import time as timemodule
 from discord_webhook import DiscordWebhook
 
 with open('./settings.yml') as file:
@@ -16,7 +16,7 @@ try:
     api_key = settings['api-key']
     api = {"Authorization": f"Bearer {api_key}"}
 
-    webhook_link = settings["webhook-url"]
+    webhook_url = settings["webhook-url"]
 
     time = settings["time"]
 
@@ -103,4 +103,4 @@ print(f'\nWaiting for next run...')
 schedule.every().day.at(time).do(run)
 while True:
     schedule.run_pending()
-    time.sleep(check_time)
+    timemodule.sleep(check_time)
